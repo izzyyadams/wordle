@@ -1,0 +1,76 @@
+body{
+    text-align: center;
+    background-color: #F5F7F8;
+    font-family: "Noto Serif";
+    font-weight: 700px;
+}
+
+h1, h3 {
+    color: #45474B;
+}
+
+/*Guess Boxes*/
+.row{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    padding: 2px;
+    gap: 2px;
+}
+
+.box {
+    height: 50px;
+    width: 50px;
+    border-color: #99A3A4;
+    border-width: 1px;
+    display: inline-block;
+    border-style: solid;
+    line-height: 50px;
+}
+
+.guesses {
+    padding-bottom: 15px;
+    display: inline-block;
+}
+
+.greenBox, greenKey {
+    color: #F5F7F8;
+    background-color: #379777;
+}
+
+.yellowBox, yellowKey {
+    color: #F5F7F8;
+    background-color: #F4CE14;
+}
+
+.grayBox, grayKey {
+    color: #F5F7F8;
+    background-color: #424949;
+}
+
+/*Keyboard*/
+.keyboard-row {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    padding: 2px;
+}
+
+.key{
+    height: 45px;
+    width: 35px;
+    background-color: #797D7F;
+    color: white;
+    border-radius: 8px;
+    border-color: #797D7F;
+    font-family: "Jost";
+    font-size: 15px;
+}
+
+
+.special-key {
+    height: 45px;
+    width: 45px;
+    
+}
+
