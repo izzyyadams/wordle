@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let guess = [];
     const errorMess = document.getElementById('errorMessage');
     const targetWord = chooseRandomWord();
-    let counter = 0;
+    let counter = -1;
 
     //0 = grey 1 = yellow 2 = green
 
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //Updates the correct box of the guess screen with the letter of the button pressed
     function deleteLastBox(length){
-        guessBox[length-1].textContent = "";
+        guessBox[length].textContent = "";
     }
 
     //Updates the guess as a whole by pushing the letter of the key pressed. 
@@ -93,15 +93,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function guesser(word, correctWord){
         const colors = getColors(word, correctWord);
-        const boxList = [document.querySelector('.box1'), document.querySelector('.box2'), document.querySelector('.box3'), document.querySelector('.box4'), document.querySelector('.box5')];
+        const boxList = [];
         const keyList = [];
+        for(let i = counter-3; i < counter+2; i++){
+            const targetClass = [".", "box", i.toString()];
+            const targetString = targetClass.join("");
+            boxList.push(document.querySelector(targetString));
+        }
         for(let i = 0; i < 5; i++){
             const targetClass = [".", word[i].toUpperCase()];
             const targetString = targetClass.join("");
-            console.log(targetString);
             keyList.push(document.querySelector(targetString));
         }
-        console.log(keyList);
         for(let i = 0; i < 5; i++){
             colorCaller(colors[i], boxList[i]);
         }
@@ -116,12 +119,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const keyLetter = this.textContent;
         if (keyLetter == "Back" && guess.length>0){
             errorMess.textContent = '';
-            deleteLastBox(guess.length);
+            deleteLastBox(counter);
+            counter -=1;
             guess=shortenGuess(guess);
         }
         else if (keyLetter == "Enter"){
             if(guess.length == 5){
-                const colors = guesser(guess, targetWord);
+                guesser(guess, targetWord);
                 guess = [];
             }
             else {
@@ -131,8 +135,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         else {
             if(guess.length < 5 && keyLetter != "Back" && keyLetter != "Enter"){
+                counter += 1;
                 errorMess.textContent = '';
-                updateGuessBox(guess.length, keyLetter);
+                updateGuessBox(counter, keyLetter);
                 guess = updateGuessWord(guess, keyLetter.toLowerCase());
             }
         }
