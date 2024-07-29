@@ -17,13 +17,9 @@ function main() {
         key.addEventListener('click', function(){
         const keyLetter = this.textContent;
         
-        //If back key is pressed when count is zero
-        if(keyLetter == "BACK" && guess.length==0){
-            errorMess.textContent = '';
-        }
 
         //If Back key is pressed:
-        else if (keyLetter == "BACK" && guess.length>0){
+        if (keyLetter == "BACK" && guess.length>0){
             errorMess.textContent = '';
             counter -=1;
 
@@ -58,7 +54,7 @@ function main() {
 
         //If letter keys are pressed:
         else {
-            if(guess.length < 5 && keyLetter != "Back" && keyLetter != "Enter" && counter < 30 && !win){
+            if(guess.length < 5 && keyLetter != "BACK" && keyLetter != "ENTER" && counter < 30 && !win){
                 errorMess.textContent = '';
                 
                 //Updates the correct box of the guess screen with the letter of the button pressed
