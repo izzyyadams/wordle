@@ -73,3 +73,17 @@ h1, h3 {
 .key, .special-key {
     box-sizing: border-box;
 }
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .key {
+        height: 40px;
+        width: 30px;
+        font-size: 16px;
+    }
+
+    .special-key {
+        height: 40px;
+        width: 40px;
+        font-size: 12px;
+    }
+}
