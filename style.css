@@ -78,14 +78,14 @@ h1, h3 {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .key {
-        height: 45px;
-        width: 35px;
+        height: 55px;
+        width: 45px;
         font-size: 16px;
     }
 
     .special-key {
-        height: 45px;
-        width: 45px;
+        height: 55px;
+        width: 55px;
         font-size: 10px;
     }
 }
