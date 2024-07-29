@@ -1,12 +1,12 @@
 body{
     text-align: center;
-    background-color: #F5F7F8;
-    font-family: "Noto Serif";
-    font-weight: 700px;
+    background-color: rgb(255, 255, 255);
+    font-family: "Inter", sans-serif;
+    font-style: normal;
 }
 
 h1, h3 {
-    color: #45474B;
+    color: rgb(0, 0, 0);
 }
 
 /*Guess Boxes*/
@@ -21,31 +21,18 @@ h1, h3 {
 .box {
     height: 50px;
     width: 50px;
-    border-color: #99A3A4;
-    border-width: 1px;
+    border-color: rgb(208, 209, 212);
+    border-width: 2px;
     display: inline-block;
     border-style: solid;
     line-height: 50px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .guesses {
     padding-bottom: 15px;
     display: inline-block;
-}
-
-.greenBox, greenKey {
-    color: #F5F7F8;
-    background-color: #379777;
-}
-
-.yellowBox, yellowKey {
-    color: #F5F7F8;
-    background-color: #F4CE14;
-}
-
-.grayBox, grayKey {
-    color: #F5F7F8;
-    background-color: #424949;
 }
 
 /*Keyboard*/
@@ -59,18 +46,24 @@ h1, h3 {
 .key{
     height: 45px;
     width: 35px;
-    background-color: #797D7F;
-    color: white;
+    background-color: rgb(212, 214, 218);
+    color: rgb(0, 0, 0);
+    border: none;
     border-radius: 8px;
-    border-color: #797D7F;
-    font-family: "Jost";
-    font-size: 15px;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+
+
 }
 
 
 .special-key {
     height: 45px;
     width: 45px;
+    font-size: 10px;
     
 }
 
