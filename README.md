@@ -1,2 +1,2 @@
 # wordle
-wordle (izzy's version) test
+wordle (izzy's version)
