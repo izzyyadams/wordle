@@ -174,7 +174,8 @@ function guesser(word, correctWord, counter, errorMess){
     }
 
     if (counter == 30 && (JSON.stringify(colors) != JSON.stringify([2, 2, 2, 2, 2]))){
-        errorMess.textContent = 'Almost!';
+        const message = 'Almost! the word was ' + targetWord;
+        errorMess.textContent = message;
         buttonMaker();
     }
 
