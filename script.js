@@ -24,6 +24,7 @@ function main() {
 
             //Updates the correct box of the guess screen with the letter of the button pressed
             guessBox[counter].textContent = "";
+            guessBox[counter].style.borderColor = 'rgb(208, 209, 212)';
             
             //Updates the guess as a whole by pushing the letter of the key pressed. 
             guess.pop();
