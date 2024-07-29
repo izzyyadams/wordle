@@ -16,9 +16,14 @@ function main() {
     Array.from(keys).forEach(function(key) {
         key.addEventListener('click', function(){
         const keyLetter = this.textContent;
+        
+        //If back key is pressed when count is zero
+        if(keyLetter == "BACK" && guess.length==0){
+            errorMess.textContent = '';
+        }
 
         //If Back key is pressed:
-        if (keyLetter == "BACK" && guess.length>0){
+        else if (keyLetter == "BACK" && guess.length>0){
             errorMess.textContent = '';
             counter -=1;
 
