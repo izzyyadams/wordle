@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     main();
 });
-
+/*git test*/
 function main() {
     const keys = document.getElementsByClassName('key');
     const guessBox = document.getElementsByClassName('box');
