@@ -16,7 +16,6 @@ function main() {
     Array.from(keys).forEach(function(key) {
         key.addEventListener('click', function(){
         const keyLetter = this.textContent;
-        
 
         //If Back key is pressed:
         if (keyLetter == "BACK" && guess.length>0){
@@ -25,7 +24,6 @@ function main() {
 
             //Updates the correct box of the guess screen with the letter of the button pressed
             guessBox[counter].textContent = "";
-            guessBox[counter].style.borderColor = 'rgb(208, 209, 212)';
             
             //Updates the guess as a whole by pushing the letter of the key pressed. 
             guess.pop();
@@ -166,6 +164,7 @@ function guesser(word, correctWord, counter, errorMess){
         }
     }
 
+
     //Checks if won
     if (JSON.stringify(colors) == JSON.stringify([2, 2, 2, 2, 2])){
         errorMess.textContent = 'Winner!';
@@ -174,8 +173,7 @@ function guesser(word, correctWord, counter, errorMess){
     }
 
     if (counter == 30 && (JSON.stringify(colors) != JSON.stringify([2, 2, 2, 2, 2]))){
-        const message = 'Almost! the word was ' + targetWord;
-        errorMess.textContent = message;
+        errorMess.textContent = 'Almost!';
         buttonMaker();
     }
 
